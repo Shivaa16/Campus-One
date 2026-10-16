@@ -85,13 +85,13 @@ Ensure that the following tools are installed:
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/AlphaX-Crypto/Campus360.git
+git clone https://github.com/Shivaa16/Campus-One.git
 ```
 
 **2. Navigate to the project directory**
 
 ```bash
-cd Campus360
+cd Campus-One
 ```
 
 **3. Install dependencies**
