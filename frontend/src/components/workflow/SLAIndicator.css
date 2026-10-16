@@ -1,0 +1,118 @@
+.c360-sla-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.c360-sla-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.c360-sla-card__title-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.c360-sla-card__icon {
+  color: var(--color-accent);
+}
+
+.c360-sla-card__title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.c360-sla-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.c360-sla-status-pill--ontrack {
+  background-color: var(--status-approved-bg);
+  color: var(--status-approved-text);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.c360-sla-status-pill__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--status-approved-text);
+}
+
+.c360-sla-status-pill--delayed {
+  background-color: var(--status-rejected-bg);
+  color: var(--color-danger);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.c360-sla-status-pill--resolved {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.c360-sla-card__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  background-color: var(--bg-subtle);
+  padding: 10px 12px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+}
+
+.c360-sla-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.c360-sla-metric__label {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.c360-sla-metric__value {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c360-sla-card__footer {
+  padding-top: var(--space-1);
+}
+
+.c360-sla-card__note {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .c360-sla-card__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}

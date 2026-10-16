@@ -35,7 +35,7 @@ export function NotFoundPage() {
         404 — Route Not Found
       </h2>
       <p style={{ color: 'var(--text-secondary)', maxWidth: '440px', marginBottom: '24px' }}>
-        The requested Campus360 path does not exist or has not been provisioned yet.
+        The requested CampusOne path does not exist or has not been provisioned yet.
       </p>
       <Link to="/student/dashboard">
         <Button variant="primary" icon={Home}>

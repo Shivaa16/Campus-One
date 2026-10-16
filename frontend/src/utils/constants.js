@@ -1,5 +1,5 @@
 export const APP_CONFIG = {
-  APP_NAME: 'Campus360',
+  APP_NAME: 'CampusOne',
   APP_TAGLINE: 'From Fragmented to Connected',
   VERSION: '1.0.0-alpha',
   CAMPUS_ID: 'INST-2026',

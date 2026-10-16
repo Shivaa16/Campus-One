@@ -1,0 +1,85 @@
+.c360-role-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  padding: 3px 6px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.c360-role-switcher__label-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 6px 0 4px;
+  border-right: 1px solid var(--border-subtle);
+}
+
+.c360-role-switcher__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  box-shadow: 0 0 6px var(--color-accent);
+}
+
+.c360-role-switcher__title {
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.c360-role-switcher__pills {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.c360-role-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.c360-role-pill:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.c360-role-pill--active {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  font-weight: var(--font-weight-semibold);
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.35);
+}
+
+.c360-role-pill--active:hover {
+  background-color: var(--color-accent-hover);
+  color: #FFFFFF;
+}
+
+.c360-role-pill__icon {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .c360-role-switcher {
+    padding: 2px 4px;
+  }
+  .c360-role-switcher__title {
+    display: none;
+  }
+}

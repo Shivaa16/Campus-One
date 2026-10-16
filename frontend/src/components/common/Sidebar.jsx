@@ -112,7 +112,7 @@ export function Sidebar({ user, isOpen, onClose }) {
             <span>Universal ID: Active</span>
           </div>
           <span className="c360-sidebar__sys-desc">
-            Campus360 Institutional Request Router v1.0
+            CampusOne Institutional Request Router v1.0
           </span>
         </div>
       </aside>

@@ -1,0 +1,206 @@
+.c360-timeline-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.c360-timeline-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: var(--space-3);
+}
+
+.c360-timeline-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.c360-timeline-card__sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.c360-timeline-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.c360-timeline-item {
+  display: flex;
+  gap: var(--space-4);
+  position: relative;
+  padding-bottom: var(--space-5);
+}
+
+.c360-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.c360-timeline-item__indicator-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.c360-timeline-item__node {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all var(--transition-fast);
+}
+
+.c360-timeline-item__node--completed {
+  background-color: var(--status-approved-bg);
+  border: 1.5px solid var(--status-approved-text);
+  color: var(--status-approved-text);
+}
+
+.c360-timeline-item__node--current {
+  background-color: var(--status-pending-bg);
+  border: 2px solid var(--status-pending-text);
+  color: var(--status-pending-text);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+}
+
+.c360-timeline-item__node--future {
+  background-color: var(--bg-subtle);
+  border: 1.5px dashed var(--border-strong);
+  color: var(--text-muted);
+}
+
+.c360-timeline-item__pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--status-pending-text);
+  animation: c360DotPulse 1.8s infinite;
+}
+
+.c360-timeline-item__step-num {
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.c360-timeline-item__line {
+  position: absolute;
+  top: 28px;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--border-default);
+  z-index: 1;
+}
+
+.c360-timeline-item__line--active {
+  background-color: var(--status-approved-text);
+}
+
+.c360-timeline-item__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.c360-timeline-item__top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.c360-timeline-item__stage-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.c360-timeline-item__stage-title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.c360-timeline-item__status-tag {
+  font-size: 10px;
+  font-weight: var(--font-weight-semibold);
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+}
+
+.c360-timeline-item__status-tag--completed {
+  background-color: var(--status-approved-bg);
+  color: var(--status-approved-text);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.c360-timeline-item__status-tag--current {
+  background-color: var(--status-pending-bg);
+  color: var(--status-pending-text);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.c360-timeline-item__status-tag--future {
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border: 1px solid var(--border-default);
+}
+
+.c360-timeline-item__timestamp {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.c360-timeline-item__authority-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.c360-timeline-item__auth-label {
+  color: var(--text-muted);
+}
+
+.c360-timeline-item__auth-name {
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.c360-timeline-item__remarks-box {
+  background-color: var(--bg-subtle);
+  border-left: 2px solid var(--color-accent);
+  padding: 6px 10px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: 4px;
+}
+
+.c360-timeline-item__remarks {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+@keyframes c360DotPulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}

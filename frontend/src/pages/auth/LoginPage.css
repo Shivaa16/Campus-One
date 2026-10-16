@@ -1,200 +1,430 @@
-.c360-login-card {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
-  box-shadow: var(--shadow-lg);
-}
+/* ============================================================
+   CAMPUS360 / CAMPUSONE MINIMAL CINEMATIC LOGIN
+   Full-Screen Background Video + Truly Transparent Floating Form
+   ============================================================ */
 
-.c360-login-card__brand {
-  text-align: center;
-  margin-bottom: var(--space-6);
-}
-
-.c360-login-card__logo-badge {
-  width: 48px;
-  height: 48px;
-  background-color: var(--color-primary);
-  color: var(--text-inverse);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
-  border-radius: var(--radius-lg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-3);
-  letter-spacing: 0.05em;
-}
-
-.c360-login-card__title {
-  font-size: var(--font-size-2xl);
-  color: var(--color-primary);
-  margin-bottom: var(--space-1);
-}
-
-.c360-login-card__subtitle {
-  font-size: var(--font-size-xs);
-  color: var(--text-muted);
-}
-
-.c360-login-card__notice {
-  background-color: var(--color-primary-light);
-  border: 1px solid var(--border-default);
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-5);
-  text-align: center;
-}
-
-.c360-login-card__notice p {
-  font-size: 11px;
-  color: var(--text-secondary);
-  margin-top: 4px;
-}
-
-.c360-login-card__quick-roles {
+.c360-fullscreen-login {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
-  margin-bottom: var(--space-6);
+  justify-content: space-between;
+  overflow-x: hidden;
+  background-color: #0B1120;
 }
 
-.c360-role-btn {
+/* ============================================================
+   1. FULLSCREEN CINEMATIC VIDEO BACKGROUND
+   ============================================================ */
+.c360-fullscreen-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Layered Navy Atmospheric Overlay (Ensures continuous readability over video) */
+.c360-fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(
+    circle at center,
+    rgba(11, 21, 40, 0.40) 0%,
+    rgba(11, 17, 32, 0.65) 65%,
+    rgba(8, 12, 22, 0.82) 100%
+  );
+  pointer-events: none;
+}
+
+/* ============================================================
+   2. TOP MINIMAL HEADER BAR
+   ============================================================ */
+.c360-login-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-8);
+  width: 100%;
+}
+
+.c360-login-header__left {
+  display: flex;
+  align-items: center;
+}
+
+.c360-login-header__right {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-md);
-  text-align: left;
-  transition: all var(--transition-fast);
 }
 
-.c360-role-btn:hover {
-  background-color: var(--color-primary-light);
-  border-color: var(--color-accent);
-  transform: translateY(-1px);
-}
-
-.c360-role-btn__icon {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-md);
-  display: flex;
+.c360-login-header__campus-pill {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.c360-role-btn__icon--student {
-  background-color: #e0f2fe;
-  color: #0369a1;
+.c360-login-header__pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #38BDF8;
+  box-shadow: 0 0 6px #38BDF8;
 }
 
-.c360-role-btn__icon--faculty {
-  background-color: #fef3c7;
-  color: #b45309;
+.c360-login-header__theme-btn {
+  background: rgba(15, 23, 42, 0.5) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #F8FAFC !important;
 }
 
-.c360-role-btn__icon--hod {
-  background-color: #e0e7ff;
-  color: #4338ca;
+.c360-login-header__theme-btn:hover {
+  background: rgba(30, 41, 59, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-.c360-role-btn__icon--admin {
-  background-color: #d1fae5;
-  color: #047857;
-}
-
-.c360-role-btn__content {
+/* ============================================================
+   3. CENTER FLOATING AUTHENTICATION STAGE (COMPLETELY TRANSPARENT)
+   ============================================================ */
+.c360-login-center-stage {
+  position: relative;
+  z-index: 10;
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-4);
+  width: 100%;
 }
 
-.c360-role-btn__title {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-primary);
+/* Fully Transparent Form Container - NO Card Background, NO Border, NO Shadow */
+.c360-minimal-login-container {
+  width: 100%;
+  max-width: 380px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
 }
 
-.c360-role-btn__desc {
-  font-size: 11px;
-  color: var(--text-muted);
+/* Prominent Transparent CampusOne Logo */
+.c360-login-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--space-2);
 }
 
-.c360-role-btn__arrow {
-  color: var(--text-muted);
+.c360-login-logo {
+  width: 250px;
+  max-width: 85vw;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55));
   transition: transform var(--transition-fast);
 }
 
-.c360-role-btn:hover .c360-role-btn__arrow {
-  color: var(--color-accent);
-  transform: translateX(3px);
+.c360-login-logo:hover {
+  transform: scale(1.02);
 }
 
-.c360-login-card__divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: var(--space-5) 0;
-}
-
-.c360-login-card__divider::before,
-.c360-login-card__divider::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid var(--border-default);
-}
-
-.c360-login-card__divider span {
-  padding: 0 var(--space-3);
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.c360-login-form {
+/* Minimal Form Fields Layout */
+.c360-minimal-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
-.c360-form-group {
+/* Demo Role Selector in Login Form */
+.c360-login-role-selector {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  width: 100%;
+  margin-bottom: var(--space-1);
 }
 
-.c360-form-label {
+.c360-login-role-title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: #F1F5F9;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.01em;
+}
+
+.c360-login-role-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  width: 100%;
+  background: rgba(5, 15, 35, 0.40);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: var(--radius-lg);
+  padding: 4px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.c360-login-role-pill {
+  padding: 7px 0;
+  text-align: center;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  color: var(--text-secondary);
-}
-
-.c360-form-input {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--border-strong);
+  color: #CBD5E1;
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: var(--radius-md);
-  background-color: var(--bg-surface);
-  transition: border-color var(--transition-fast);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-.c360-form-input:focus {
-  outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+.c360-login-role-pill:hover:not(.c360-login-role-pill--active) {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.10);
 }
 
-.c360-login-submit-btn {
+.c360-login-role-pill--active {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  color: #FFFFFF !important;
+  font-weight: var(--font-weight-semibold);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.5);
+}
+
+.c360-minimal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   width: 100%;
-  margin-top: var(--space-2);
 }
 
-.c360-login-card__footer {
-  margin-top: var(--space-6);
-  text-align: center;
+.c360-minimal-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.c360-minimal-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: #F1F5F9;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.01em;
+}
+
+.c360-minimal-forgot-link {
   font-size: 11px;
-  color: var(--text-muted);
+  color: #93C5FD;
+  font-weight: var(--font-weight-medium);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  transition: color var(--transition-fast);
+}
+
+.c360-minimal-forgot-link:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.c360-minimal-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.c360-minimal-input-icon {
+  position: absolute;
+  left: 14px;
+  color: #CBD5E1;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Subtly Translucent Inputs for Legibility Over Video */
+.c360-minimal-input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-xs);
+  color: #FFFFFF;
+  background: rgba(5, 15, 35, 0.40);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.c360-minimal-input--pass {
+  padding-right: 42px;
+}
+
+.c360-minimal-input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.c360-minimal-input:focus {
+  outline: none;
+  background: rgba(8, 22, 50, 0.60);
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.30), 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.c360-minimal-eye-btn {
+  position: absolute;
+  right: 12px;
+  padding: 4px;
+  color: #CBD5E1;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.c360-minimal-eye-btn:hover {
+  color: #FFFFFF;
+}
+
+/* Strong Signature Solid Blue Sign In CTA (NOT transparent) */
+.c360-minimal-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  margin-top: var(--space-2);
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.55), 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+}
+
+.c360-minimal-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.7);
+}
+
+.c360-minimal-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.c360-minimal-submit-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.c360-minimal-submit-btn:hover:not(:disabled) .c360-minimal-submit-arrow {
+  transform: translateX(3px);
+}
+
+/* ============================================================
+   4. BOTTOM MESSAGING STATEMENT
+   ============================================================ */
+.c360-login-bottom-statement-wrap {
+  margin-top: var(--space-6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 540px;
+  width: 100%;
+  padding: 0 var(--space-4);
+}
+
+.c360-login-bottom-statement {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: #F8FAFC;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* ============================================================
+   5. RESPONSIVENESS & ACCESSIBILITY
+   ============================================================ */
+@media (max-width: 768px) {
+  .c360-login-header {
+    padding: var(--space-4);
+  }
+
+  .c360-login-header__campus-pill {
+    display: none;
+  }
+
+  .c360-minimal-login-container {
+    max-width: calc(100% - 24px);
+  }
+
+  .c360-login-logo {
+    width: 220px;
+  }
+
+  .c360-login-bottom-statement-wrap {
+    margin-top: var(--space-4);
+    max-width: 90%;
+  }
+
+  .c360-login-bottom-statement {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+  .c360-fullscreen-video {
+    display: none;
+  }
+  .c360-fullscreen-login {
+    background: radial-gradient(circle at center, #152A4A 0%, #0B1120 100%);
+  }
 }

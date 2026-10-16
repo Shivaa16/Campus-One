@@ -1,0 +1,382 @@
+.c360-review-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.c360-review-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.c360-review-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.c360-review-back-link:hover {
+  color: var(--color-accent);
+}
+
+.c360-review-authority-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.c360-review-hero-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.c360-review-hero__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 280px;
+}
+
+.c360-review-hero__id-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.c360-review-hero__id {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  background-color: var(--color-accent-subtle);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.c360-review-hero__sep {
+  color: var(--text-muted);
+}
+
+.c360-review-hero__cat {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+.c360-review-hero__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.c360-review-hero__meta-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.c360-rev-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.c360-rev-meta-label {
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.c360-rev-meta-val {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.c360-review-hero__status-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.c360-rev-status-label {
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Authority Decision Bar */
+.c360-decision-bar-card {
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.c360-decision-bar__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 440px;
+}
+
+.c360-decision-bar__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.c360-decision-bar__desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.c360-decision-bar__buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+/* Primary Action: Campus360 Primary Blue */
+.c360-btn-approve {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 20px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  background-color: #2563EB;
+  color: #FFFFFF !important;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border: 1px solid #1D4ED8;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.c360-btn-approve:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  background-color: #1D4ED8;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+.c360-btn-approve:active {
+  transform: translateY(0);
+}
+
+/* Secondary Action: Amber Outline */
+.c360-btn-changes {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #D97706;
+  border: 1.5px solid rgba(217, 119, 6, 0.5);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.c360-btn-changes:hover {
+  background-color: rgba(245, 158, 11, 0.12);
+  border-color: #D97706;
+  color: #B45309;
+}
+
+/* Danger Action: Red Outline */
+.c360-btn-reject {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #DC2626;
+  border: 1.5px solid rgba(220, 38, 38, 0.5);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.c360-btn-reject:hover {
+  background-color: rgba(239, 68, 68, 0.12);
+  border-color: #DC2626;
+  color: #B91C1C;
+}
+
+.c360-review-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.c360-review-main-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.c360-review-section-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.c360-review-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: sticky;
+  top: var(--space-6);
+}
+
+.c360-review-modal {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-lg);
+}
+
+.c360-modal-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c360-modal-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.c360-modal-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+.c360-modal-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.c360-modal-error {
+  font-size: 11px;
+  color: var(--color-danger);
+}
+
+.c360-modal-btn-confirm {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.c360-modal-btn-confirm--approve {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  background-color: #2563EB;
+}
+
+.c360-modal-btn-confirm--approve:hover {
+  background: #1D4ED8;
+}
+
+.c360-modal-btn-confirm--changes {
+  background-color: #D97706;
+}
+
+.c360-modal-btn-confirm--changes:hover {
+  background-color: #B45309;
+}
+
+.c360-modal-btn-confirm--reject {
+  background-color: #DC2626;
+}
+
+.c360-modal-btn-confirm--reject:hover {
+  background-color: #B91C1C;
+}
+
+.c360-review-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+  gap: var(--space-3);
+}
+
+@media (max-width: 900px) {
+  .c360-review-grid {
+    grid-template-columns: 1fr;
+  }
+  .c360-review-side-col {
+    position: static;
+  }
+}

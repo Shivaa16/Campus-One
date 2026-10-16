@@ -1,6 +1,6 @@
 /* ============================================================
    CAMPUS360 DESIGN SYSTEM TOKENS
-   Phase 2B: Light & Dark Theme Infrastructure
+   Phase 2B & 2C: Light & Dark Theme Infrastructure
    ============================================================ */
 
 :root,
@@ -74,9 +74,15 @@
   --shadow-lg: 0 10px 15px -3px rgba(17, 24, 39, 0.08), 0 4px 6px -4px rgba(17, 24, 39, 0.04);
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
 
-  /* Hero Gradient / Overlay */
+  /* Dashboard Hero Directional Gradient Overlay (Campus architecture clear on right, text crisp on left) */
   --hero-bg-gradient: linear-gradient(135deg, #0B1528 0%, #152A4A 60%, #1C3660 100%);
   --hero-overlay: rgba(11, 21, 40, 0.75);
+  --hero-gradient-overlay: linear-gradient(
+    90deg,
+    rgba(10, 25, 55, 0.90) 0%,
+    rgba(10, 25, 55, 0.72) 48%,
+    rgba(10, 25, 55, 0.28) 100%
+  );
 }
 
 [data-theme="dark"] {
@@ -149,9 +155,15 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
 
-  /* Hero Gradient / Overlay */
+  /* Dashboard Hero Directional Gradient Overlay (Dark Theme) */
   --hero-bg-gradient: linear-gradient(135deg, #090F1C 0%, #111E36 60%, #162645 100%);
   --hero-overlay: rgba(9, 15, 28, 0.82);
+  --hero-gradient-overlay: linear-gradient(
+    90deg,
+    rgba(9, 15, 28, 0.94) 0%,
+    rgba(9, 15, 28, 0.78) 50%,
+    rgba(9, 15, 28, 0.35) 100%
+  );
 }
 
 /* ============================================================

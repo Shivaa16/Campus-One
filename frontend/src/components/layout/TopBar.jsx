@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import { Calendar, Search, Bell, Menu } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Calendar, Search, Bell, Menu, LogOut } from 'lucide-react';
 import { ThemeToggle } from '../theme/ThemeToggle';
 import { useAuth } from '../../hooks/useAuth';
 import './TopBar.css';
 
 export function TopBar({ onToggleSidebar }) {
-  const { user } = useAuth();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
 
   const academicTerm = user?.academicYear || 'Academic Year 2025–26 • Spring';
   const initials = user?.initials || (user?.name ? user.name.split(' ').map(n => n[0]).join('').slice(0, 2) : 'SK');
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   return (
     <header className="c360-topbar">
@@ -55,6 +62,17 @@ export function TopBar({ onToggleSidebar }) {
         >
           <Bell size={18} />
           <span className="c360-topbar__notif-indicator" />
+        </button>
+
+        <button
+          type="button"
+          className="c360-topbar__logout-btn"
+          onClick={handleLogout}
+          title="Sign Out"
+          aria-label="Sign Out"
+        >
+          <LogOut size={15} />
+          <span className="c360-topbar__logout-label">Sign Out</span>
         </button>
 
         <div className="c360-topbar__avatar-btn" title={`${user?.name || 'Student'} (${user?.role || 'STUDENT'})`}>

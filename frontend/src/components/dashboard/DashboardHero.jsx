@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Plus } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
+import campusHeroImg from '../../assets/hero.png';
 import './DashboardHero.css';
 
 export function DashboardHero({
   campusName = 'Garden City University',
-  bgImage = null, // Optional replaceable campus image asset path
+  bgImage = campusHeroImg, // Default to local static Garden City University image
 }) {
   const { user } = useAuth();
   const firstName = user?.name ? user.name.split(' ')[0] : 'Shiva';
@@ -14,11 +15,9 @@ export function DashboardHero({
   return (
     <div
       className="c360-hero"
-      style={
-        bgImage
-          ? { backgroundImage: `linear-gradient(var(--hero-overlay), var(--hero-overlay)), url(${bgImage})` }
-          : {}
-      }
+      style={{
+        backgroundImage: `var(--hero-gradient-overlay), url(${bgImage})`,
+      }}
     >
       <div className="c360-hero__content">
         <div className="c360-hero__pill">
@@ -29,7 +28,7 @@ export function DashboardHero({
         <h1 className="c360-hero__title">Good morning, {firstName}</h1>
 
         <p className="c360-hero__subtitle">
-          Track requests, complete required actions, and access your campus records.
+          Manage your requests and campus records in one place.
         </p>
       </div>
 
@@ -42,3 +41,5 @@ export function DashboardHero({
     </div>
   );
 }
+
+export default DashboardHero;

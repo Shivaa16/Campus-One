@@ -167,3 +167,21 @@
   color: var(--text-secondary);
   line-height: 1.4;
 }
+
+/* Empty State */
+.c360-approval-widget__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-default);
+}
+
+.c360-approval-widget__empty-text {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  margin: 0;
+}

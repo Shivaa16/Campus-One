@@ -1,0 +1,186 @@
+.c360-routing-preview {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: all var(--transition-fast);
+}
+
+.c360-routing-preview__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.c360-routing-preview__title-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.c360-routing-preview__icon {
+  color: var(--color-accent);
+}
+
+.c360-routing-preview__title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+}
+
+.c360-routing-preview__badge {
+  font-size: 11px;
+  color: var(--color-accent);
+  background-color: var(--color-accent-subtle);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Smart Route Specifications Grid */
+.c360-smart-route-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.c360-smart-route-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  flex-wrap: wrap;
+}
+
+.c360-smart-route-label {
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-width: 130px;
+}
+
+.c360-smart-route-val {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  text-align: right;
+  flex: 1;
+}
+
+.c360-routing-preview__route-track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding: var(--space-2) 0;
+}
+
+.c360-route-node {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.c360-route-node__circle {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-strong);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.c360-route-node__circle--origin {
+  background-color: var(--color-accent-subtle);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.c360-route-node__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.c360-route-node__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.c360-route-node__authority {
+  font-size: 10px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.c360-route-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+.c360-route-connector__arrow {
+  color: var(--border-strong);
+}
+
+.c360-routing-preview__footer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.c360-routing-preview__shield {
+  color: var(--color-accent);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.c360-routing-preview__disclaimer {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+.c360-routing-preview__disclaimer strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .c360-routing-preview__route-track {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .c360-route-connector {
+    transform: rotate(90deg);
+    margin-left: 8px;
+    padding: 2px 0;
+  }
+}

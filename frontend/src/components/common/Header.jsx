@@ -29,7 +29,7 @@ export function Header({ user, onToggleSidebar }) {
         <div className="c360-header__brand" onClick={() => navigate('/login')}>
           <div className="c360-header__logo-badge">C360</div>
           <div>
-            <h1 className="c360-header__brand-title">Campus360</h1>
+            <h1 className="c360-header__brand-title">CampusOne</h1>
             <span className="c360-header__brand-subtitle">{roleLabel}</span>
           </div>
         </div>

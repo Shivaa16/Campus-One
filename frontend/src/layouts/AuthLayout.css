@@ -1,13 +1,7 @@
 .c360-auth-layout {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
-  padding: var(--space-6);
-}
-
-.c360-auth-layout__inner {
   width: 100%;
-  max-width: 480px;
+  display: flex;
+  background-color: var(--bg-app);
+  overflow-x: hidden;
 }

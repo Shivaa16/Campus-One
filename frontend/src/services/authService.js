@@ -33,9 +33,9 @@ export const authService = {
   getCurrentUser() {
     try {
       const stored = localStorage.getItem(AUTH_STORAGE_KEY);
-      return stored ? JSON.parse(stored) : MOCK_USERS.student;
+      return stored ? JSON.parse(stored) : null;
     } catch {
-      return MOCK_USERS.student;
+      return null;
     }
   },
 

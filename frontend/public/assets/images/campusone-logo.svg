@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none">
+  <defs>
+    <linearGradient id="c1-blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="50%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="c1-cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+    <filter id="c1-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#2563EB" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Campus Emblem Icon (Connected nodes / Geometric crest) -->
+  <g transform="translate(4, 8)" filter="url(#c1-glow)">
+    <!-- Base diamond/shield -->
+    <path d="M24 0 L44 12 L44 36 L24 48 L4 36 L4 12 Z" fill="url(#c1-blue-grad)" fill-opacity="0.9" />
+    <!-- Inner faceted geometry -->
+    <path d="M24 0 L44 12 L24 24 L4 12 Z" fill="#93C5FD" fill-opacity="0.4" />
+    <path d="M24 24 L44 12 L44 36 L24 48 Z" fill="#1E40AF" fill-opacity="0.4" />
+    <!-- Center connected 360 circle/node -->
+    <circle cx="24" cy="24" r="6" fill="#FFFFFF" />
+    <circle cx="24" cy="24" r="3" fill="#2563EB" />
+    <!-- Orbiting Accent Ring -->
+    <path d="M12 20 C12 14, 36 14, 36 20 C36 28, 12 28, 12 34 C12 40, 36 40, 36 34" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8" />
+  </g>
+
+  <!-- Typography: CampusOne -->
+  <g transform="translate(62, 42)">
+    <!-- "Campus" in bold white -->
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5px">
+      Campus
+    </text>
+    <!-- "One" in electric blue -->
+    <text x="122" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="url(#c1-cyan-grad)" letter-spacing="-0.5px">
+      One
+    </text>
+    <!-- Subtitle / Tagline -->
+    <text x="2" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9" font-weight="600" fill="#94A3B8" letter-spacing="2.2px" text-transform="uppercase">
+      Connected Campus System
+    </text>
+  </g>
+</svg>

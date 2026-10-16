@@ -63,38 +63,50 @@ export function WorkflowProgress({ stages = [] }) {
 }
 
 export function ApprovalProgressWidget({
-  requestId = 'C360-2026-0001',
-  title = 'Hackathon Permission',
-  status = 'IN_REVIEW',
-  statusLabel = 'In review',
+  requestId,
+  title,
+  status,
+  statusLabel,
   stages = [],
-  stageNote = 'Stage 3 of 4: Awaiting Head of Department digital endorsement.',
-  detailLink = '/student/requests/C360-2026-0001',
+  stageNote,
+  detailLink,
 }) {
+  const hasActiveRequest = Boolean(requestId && stages && stages.length > 0);
+
   return (
     <div className="c360-approval-widget">
       <div className="c360-approval-widget__header">
         <h2 className="c360-approval-widget__title">Approval Progress</h2>
-        <Link to={detailLink} className="c360-approval-widget__view-link">
-          <span>View request</span>
-        </Link>
+        {hasActiveRequest && detailLink && (
+          <Link to={detailLink} className="c360-approval-widget__view-link">
+            <span>View request</span>
+          </Link>
+        )}
       </div>
 
-      <div className="c360-approval-widget__meta">
-        <div className="c360-approval-widget__id-row">
-          <span className="mono-code">{requestId}</span>
-          <StatusBadge status={status} label={statusLabel} />
-        </div>
-        <h3 className="c360-approval-widget__req-title">{title}</h3>
-      </div>
+      {hasActiveRequest ? (
+        <>
+          <div className="c360-approval-widget__meta">
+            <div className="c360-approval-widget__id-row">
+              <span className="mono-code">{requestId}</span>
+              <StatusBadge status={status} label={statusLabel} />
+            </div>
+            <h3 className="c360-approval-widget__req-title">{title}</h3>
+          </div>
 
-      {/* Progress Track */}
-      <WorkflowProgress stages={stages} />
+          {/* Progress Track */}
+          <WorkflowProgress stages={stages} />
 
-      {/* Explanation Box */}
-      {stageNote && (
-        <div className="c360-approval-widget__note">
-          <p>{stageNote}</p>
+          {/* Explanation Box */}
+          {stageNote && (
+            <div className="c360-approval-widget__note">
+              <p>{stageNote}</p>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="c360-approval-widget__empty">
+          <p className="c360-approval-widget__empty-text">No active request to track.</p>
         </div>
       )}
     </div>
